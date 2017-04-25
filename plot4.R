@@ -12,7 +12,7 @@ data$datetime<-strptime(paste(data$Date,data$Time),format="%Y-%m-%d %H:%M:%S")
 data1<-data[data$Date %in% as.Date(c('2007-02-01','2007-02-02')),]
 
 ####### Draw 2x2 plots
-
+leg_list=c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
 par(mfrow=c(2,2))
 
 plot(data1$datetime,data1$Global_active_power,type="l",xlab="",ylab="Global Active Power")
@@ -25,5 +25,5 @@ plot(data1$datetime,data1$Global_reactive_power,type="l",xlab="datetime",ylab="G
 
 
 ####### Write plot to png file
-dev.copy(png,'plot3.png',width=480,height=480)
+dev.copy(png,'plot4.png',width=480,height=480)
 dev.off()
