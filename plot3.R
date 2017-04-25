@@ -12,6 +12,7 @@ data$datetime<-strptime(paste(data$Date,data$Time),format="%Y-%m-%d %H:%M:%S")
 data1<-data[data$Date %in% as.Date(c('2007-02-01','2007-02-02')),]
 
 ####### Draw line chart
+leg_list=c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
 plot(data1$datetime,data1$Sub_metering_1,type="l",col=1,xlab="",ylab="Energy Sub Metering")
 lines(data1$datetime,data1$Sub_metering_2,col=2)
 lines(data1$datetime,data1$Sub_metering_3,col=4)
